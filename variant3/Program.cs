@@ -119,7 +119,10 @@ namespace variant3
             {
                 nodes[i] = false;
             }
-            Console.WriteLine("the left is " + josephus(nodes, 7, 0, nodes.Length));
+            Console.WriteLine("choose your numder");
+            int c = Convert.ToInt32(Console.ReadLine());
+            int start = 0;
+            Console.WriteLine("the left is " + josephus(nodes, c,start, nodes.Length));
 
 
             //findminmaxfunction1(randommassive());
