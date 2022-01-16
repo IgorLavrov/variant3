@@ -60,19 +60,7 @@ namespace variant3
             Console.ReadLine();
         }
 
-        public static Dictionary<int, string> MyDic(int n)
-        {
-            Dictionary<int, string> dic = new Dictionary<int, string>();
-            Console.WriteLine("Введите имя : \n");
-            string s;
-            for (int j = 1; j <= n; j++)
-            {
-                Console.Write("Имя{0} --> ", j);
-                s = Console.ReadLine();
-                dic.Add(j, s);
-            }
-            return dic;
-        }
+      
 
 
         public static int josephus(bool [] nodes, int k, int start, int left)
@@ -112,6 +100,7 @@ namespace variant3
 
         static void Main(string[] args)
         {
+            //Ü 3. Задача Иосифа.
             Random rnd = new Random();
             int b = rnd.Next(10, 100);
             bool [] nodes = new bool [b];
@@ -124,54 +113,11 @@ namespace variant3
             int start = 0;
             Console.WriteLine("the left is " + josephus(nodes, c,start, nodes.Length));
 
+            //Ü 1. В заданном массиве действительных чисел найдите разность между максимальным и минимальным числом.
+            findminmaxfunction1(randommassive());
 
-            //findminmaxfunction1(randommassive());
-
-            //countFunction();
-
-
-
-
-
-
-            /* optional 
-             * 
-             * Console.Write("Сколько игроков добавить?");
-        int n = int.Parse(Console.ReadLine());
-        Dictionary<int, string> dic = Program.MyDic(n);
-        Console.Write("До какого считать?");
-        int k = int.Parse(Console.ReadLine());
-
-            Random rnd = new Random();
-            int[] M = new int[100];
-            int count = 0;
-            for (int i = 0; i < 100; i++)
-            {
-                M[i] = rnd.Next(-100, 200);
-                if (M[i] > 0 && M[i] < 125)
-                    count++;
-            }
-            Console.WriteLine(count);
-
-            Random rnd = new Random();
-            int[] d = new int[30];
-            int max = 0, min = 100;
-            for (int i = 0; i < d.Length; i++)
-                d[i] = rnd.Next(100);
-
-            for (int i = 0; i < d.Length; i++)
-            {
-                if (d[i] > max) max = d[i];
-                if (d[i] < min) min = d[i];
-            }
-
-            for (int i = 0; i < d.Length; i++) Console.Write(" " + d[i]);//выводим массив
-            Console.WriteLine();
-            Console.WriteLine("max:  " + max);
-            Console.WriteLine("min  " + min);
-            Console.WriteLine("Difference betwen min and max" + (max - min));
-            Console.ReadKey();*/
-
+            //Ü 2. В одномерном массиве из K чисел M[] подсчитайте количество элементов, удовлетворяющих условию 0 < M[i] <125. K, M создаются случайно.
+            countFunction();
 
 
         }
