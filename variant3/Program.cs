@@ -97,7 +97,6 @@ namespace variant3
             return start;
         }
 
-
         static void Main(string[] args)
         {
             //Ü 3. Задача Иосифа.
