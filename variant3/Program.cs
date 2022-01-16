@@ -55,7 +55,7 @@ namespace variant3
                 if (g > 0 && g < 125)
                     count++;
             }
-            Console.ReadLine();
+            Console.WriteLine();
             Console.WriteLine("число" + " " + count);
             Console.ReadLine();
         }
@@ -63,7 +63,7 @@ namespace variant3
       
 
 
-        public static int josephus(bool [] nodes, int k, int start, int left)
+        public static int josephus(bool [] nodes, int d, int start, int left)
         {
             if (left == 1)
             {// Последний оставшийся человек, найти координаты этого человека и вернуть
@@ -71,7 +71,7 @@ namespace variant3
                 return ++start;
             }
             int i = 1; // Начинаем считать с начала, отфильтровываем людей из списка, пока не начнем считать до k-1
-            while (i < k)
+            while (i < d)
             {
                 if (nodes[start] == false)
                 {
@@ -84,7 +84,7 @@ namespace variant3
             nodes[start] = true; // Найти человека, который считает k, dequeue
             left--; // Общее количество людей уменьшается
             Console.WriteLine("person is killed under number:" + (start + 1));
-            return josephus(nodes, k, (++start) % nodes.Length, left); // Перезапустить следующий раунд
+            return josephus(nodes, d, (++start) % nodes.Length, left); // Перезапустить следующий раунд
         }
 
         private static int ignore(bool [] nodes, int start)
@@ -101,22 +101,26 @@ namespace variant3
         static void Main(string[] args)
         {
             //Ü 3. Задача Иосифа.
-            Random rnd = new Random();
-            int b = rnd.Next(10, 100);
-            bool [] nodes = new bool [b];
+            Console.WriteLine(" Задача Иосифа.");
+            Console.WriteLine("choose size of your massive");
+            int c = Convert.ToInt32(Console.ReadLine());
+            bool [] nodes = new bool [c];
             for (int i = 0; i < nodes.Length; i++)
             {
                 nodes[i] = false;
             }
-            Console.WriteLine("choose your numder");
-            int c = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("choose count step");
+            int d = Convert.ToInt32(Console.ReadLine());
             int start = 0;
-            Console.WriteLine("the left is " + josephus(nodes, c,start, nodes.Length));
+            Console.WriteLine("the left is " + josephus(nodes, d,start, nodes.Length));
+            Console.ReadLine();
 
             //Ü 1. В заданном массиве действительных чисел найдите разность между максимальным и минимальным числом.
+            Console.WriteLine("В заданном массиве действительных чисел найдите разность между максимальным и минимальным числом.");
             findminmaxfunction1(randommassive());
 
             //Ü 2. В одномерном массиве из K чисел M[] подсчитайте количество элементов, удовлетворяющих условию 0 < M[i] <125. K, M создаются случайно.
+            Console.WriteLine("В одномерном массиве из K чисел M[] подсчитайте количество элементов, удовлетворяющих условию 0 < M[i] <125");
             countFunction();
 
 
